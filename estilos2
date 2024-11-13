@@ -1,0 +1,75 @@
+body {
+    background-image: url('https://static.wikia.nocookie.net/villains/images/6/60/FatuiCapitano.png/revision/latest?cb=20220711070127');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #000000;
+}
+
+.contenedor-tareas {
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(29, 235, 10);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 12px 18px;
+    background-color: #3a8d42;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #338f39;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+}
+
+.tarea-completa {
+    background-color: #ffffff;
+}
+
+button.eliminar {
+    background-color: #482fd3;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.eliminar:hover {
+    background-color: #482fd3;
+}
