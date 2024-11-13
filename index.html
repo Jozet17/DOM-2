@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <div class="contenedor-tareas">
+        <h2>Mis Tareas</h2>
+        
+        <input type="text" id="entradaTarea" placeholder="Escribe una nueva tarea">
+        <button id="botonAgregar">Añadir Tarea</button>
+        
+        <ul id="listaDeTareas">
+        </ul>
+    </div>
+
+    <script>
+        const entradaTarea = document.getElementById("entradaTarea");
+        const botonAgregar = document.getElementById("botonAgregar");
+        const listaDeTareas = document.getElementById("listaDeTareas");
+
+  
+        function agregarTarea() {
+            const textoTarea = entradaTarea.value.trim(); 
+
+            if (textoTarea === "") {
+                alert("Por favor ingresa una tarea.");
+                return;
+            }
+            const nuevoElemento = document.createElement("li");
+            nuevoElemento.classList.add("tarea"); 
+            nuevoElemento.textContent = textoTarea;
+            const botonCompletar = document.createElement("button");
+            botonCompletar.textContent = "Completada";
+            botonCompletar.addEventListener("click", () => {
+                nuevoElemento.classList.toggle("tarea-completa"); 
+            });
+
+            const botonEliminar = document.createElement("button");
+            botonEliminar.textContent = "Eliminar";
+            botonEliminar.classList.add("eliminar");
+            botonEliminar.addEventListener("click", () => {
+            listaDeTareas.removeChild(nuevoElemento); 
+            });
+            nuevoElemento.appendChild(botonCompletar);
+            nuevoElemento.appendChild(botonEliminar);
+
+            listaDeTareas.appendChild(nuevoElemento);
+
+            entradaTarea.value = "";
+        }
+        botonAgregar.addEventListener("click", agregarTarea);
+        entradaTarea.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                agregarTarea();
+            }
+        });
+    </script>
+
+</body>
+</html>
